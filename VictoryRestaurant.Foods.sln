@@ -7,6 +7,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Presentation", "VictoryRestaurant.Foods.Presentation\VictoryRestaurant.Foods.Presentation.csproj", "{CA351D8A-98E3-4B60-9FC8-2C078D8DE588}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{AD2D9174-BB1C-4AC9-A8D2-9DCA21AED859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Application", "VictoryRestaurant.Foods.Application\VictoryRestaurant.Foods.Application.csproj", "{BA6E3D39-FB23-4359-987D-916DC4DBDDB0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{26290A62-30A2-4BA8-954A-F1FA30B64A6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Domain", "VictoryRestaurant.Foods.Domain\VictoryRestaurant.Foods.Domain.csproj", "{C222048C-6A6F-4584-B17D-BDEC6767021B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Persistence", "4 - Persistence", "{CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Persistence", "VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj", "{2CAF3E97-C06B-4033-98A7-EC9B1384A879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Infrastructure", "VictoryRestaurant.Foods.Infrastructure\VictoryRestaurant.Foods.Infrastructure.csproj", "{68EACE7E-C49A-4C11-9A04-8328335A328A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{5E1EE2E2-08FF-4C7B-86FA-77CBEF208060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VictoryRestaurant.Foods.Tests", "VictoryRestaurant.Foods.Tests\VictoryRestaurant.Foods.Tests.csproj", "{8905ACD0-63E5-4E82-BDA8-50D7F228448A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +37,37 @@ Global
 		{CA351D8A-98E3-4B60-9FC8-2C078D8DE588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA351D8A-98E3-4B60-9FC8-2C078D8DE588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA351D8A-98E3-4B60-9FC8-2C078D8DE588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6E3D39-FB23-4359-987D-916DC4DBDDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6E3D39-FB23-4359-987D-916DC4DBDDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6E3D39-FB23-4359-987D-916DC4DBDDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6E3D39-FB23-4359-987D-916DC4DBDDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C222048C-6A6F-4584-B17D-BDEC6767021B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C222048C-6A6F-4584-B17D-BDEC6767021B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C222048C-6A6F-4584-B17D-BDEC6767021B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C222048C-6A6F-4584-B17D-BDEC6767021B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CAF3E97-C06B-4033-98A7-EC9B1384A879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAF3E97-C06B-4033-98A7-EC9B1384A879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAF3E97-C06B-4033-98A7-EC9B1384A879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CAF3E97-C06B-4033-98A7-EC9B1384A879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EACE7E-C49A-4C11-9A04-8328335A328A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EACE7E-C49A-4C11-9A04-8328335A328A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EACE7E-C49A-4C11-9A04-8328335A328A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EACE7E-C49A-4C11-9A04-8328335A328A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8905ACD0-63E5-4E82-BDA8-50D7F228448A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8905ACD0-63E5-4E82-BDA8-50D7F228448A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8905ACD0-63E5-4E82-BDA8-50D7F228448A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8905ACD0-63E5-4E82-BDA8-50D7F228448A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA351D8A-98E3-4B60-9FC8-2C078D8DE588} = {30135A4F-C631-409D-B6A8-6E6D935CB912}
+		{BA6E3D39-FB23-4359-987D-916DC4DBDDB0} = {AD2D9174-BB1C-4AC9-A8D2-9DCA21AED859}
+		{C222048C-6A6F-4584-B17D-BDEC6767021B} = {26290A62-30A2-4BA8-954A-F1FA30B64A6C}
+		{2CAF3E97-C06B-4033-98A7-EC9B1384A879} = {CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}
+		{68EACE7E-C49A-4C11-9A04-8328335A328A} = {2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}
+		{8905ACD0-63E5-4E82-BDA8-50D7F228448A} = {5E1EE2E2-08FF-4C7B-86FA-77CBEF208060}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05B5D777-0625-4715-B206-869C5F4EC7D9}
