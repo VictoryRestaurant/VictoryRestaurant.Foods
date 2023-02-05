@@ -20,7 +20,7 @@ public interface IFoodEntityRepository
     public ValueTask<FoodEntity> CreateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default);
 
-    public ValueTask UpdateAsync(FoodEntity entity,
+    public ValueTask<FoodEntity> UpdateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default);
 
     public ValueTask DeleteAsync(Guid id,
