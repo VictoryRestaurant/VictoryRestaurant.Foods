@@ -10,7 +10,7 @@ public sealed class FoodEntity
     public DateTime CreatedDate { get; set; }
 
     /// <summary> Food name. </summary>
-	public string? Name { get; set; }
+	public string Name { get; set; } = default!;
 
     /// <summary> Food description. </summary>
     public string? Description { get; set; }
