@@ -12,6 +12,10 @@ public sealed class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.AddFoodEntityConfiguration();
+
+        modelBuilder.AddFoodTypeEntityConfiguration();
+
         base.OnModelCreating(modelBuilder);
     }
 }
