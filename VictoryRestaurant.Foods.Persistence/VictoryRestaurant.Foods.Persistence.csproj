@@ -15,4 +15,8 @@
     <ProjectReference Include="..\VictoryRestaurant.Foods.Domain\VictoryRestaurant.Foods.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

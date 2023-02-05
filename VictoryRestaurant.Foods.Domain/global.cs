@@ -1,1 +1,1 @@
-﻿
+﻿global using VictoryRestaurant.Foods.Domain.Entities;
