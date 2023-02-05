@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{30135A4F-C631-409D-B6A8-6E6D935CB912}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{AD2D9174-BB1C-4AC9-A8D2-9DCA21AED859}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{26290A62-30A2-4BA8-954A-F1FA30B64A6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Persistence", "4 - Persistence", "{CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}"
+	ProjectSection(SolutionItems) = preProject
+		src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj = src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{5E1EE2E2-08FF-4C7B-86FA-77CBEF208060}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Presentation", "src\VictoryRestaurant.Foods.Presentation\VictoryRestaurant.Foods.Presentation.csproj", "{6B131236-783C-41E8-8A6C-5FCBE70D172E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Application", "src\VictoryRestaurant.Foods.Application\VictoryRestaurant.Foods.Application.csproj", "{26C7E898-65C3-4608-A4CD-24BD961D5DD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Domain", "src\VictoryRestaurant.Foods.Domain\VictoryRestaurant.Foods.Domain.csproj", "{177AEB9B-0310-46DF-B2B6-83D01F7E863F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Infrastructure", "src\VictoryRestaurant.Foods.Infrastructure\VictoryRestaurant.Foods.Infrastructure.csproj", "{0F247E33-4A92-453B-86B5-700B919C4B1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Tests", "src\VictoryRestaurant.Foods.Tests\VictoryRestaurant.Foods.Tests.csproj", "{D55956C2-0CC6-465F-877D-8A22C6357A1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B131236-783C-41E8-8A6C-5FCBE70D172E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B131236-783C-41E8-8A6C-5FCBE70D172E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B131236-783C-41E8-8A6C-5FCBE70D172E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B131236-783C-41E8-8A6C-5FCBE70D172E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26C7E898-65C3-4608-A4CD-24BD961D5DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26C7E898-65C3-4608-A4CD-24BD961D5DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26C7E898-65C3-4608-A4CD-24BD961D5DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26C7E898-65C3-4608-A4CD-24BD961D5DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177AEB9B-0310-46DF-B2B6-83D01F7E863F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177AEB9B-0310-46DF-B2B6-83D01F7E863F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177AEB9B-0310-46DF-B2B6-83D01F7E863F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177AEB9B-0310-46DF-B2B6-83D01F7E863F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F247E33-4A92-453B-86B5-700B919C4B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F247E33-4A92-453B-86B5-700B919C4B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F247E33-4A92-453B-86B5-700B919C4B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F247E33-4A92-453B-86B5-700B919C4B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B131236-783C-41E8-8A6C-5FCBE70D172E} = {30135A4F-C631-409D-B6A8-6E6D935CB912}
+		{26C7E898-65C3-4608-A4CD-24BD961D5DD8} = {AD2D9174-BB1C-4AC9-A8D2-9DCA21AED859}
+		{177AEB9B-0310-46DF-B2B6-83D01F7E863F} = {26290A62-30A2-4BA8-954A-F1FA30B64A6C}
+		{0F247E33-4A92-453B-86B5-700B919C4B1D} = {2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}
+		{D55956C2-0CC6-465F-877D-8A22C6357A1D} = {5E1EE2E2-08FF-4C7B-86FA-77CBEF208060}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05B5D777-0625-4715-B206-869C5F4EC7D9}
+	EndGlobalSection
+EndGlobal
