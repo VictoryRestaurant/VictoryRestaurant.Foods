@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 /VictoryRestaurant.Foods.Presentation/appsettings.json
 /VictoryRestaurant.Foods.Presentation/appsettings.Development.json
+/src/VictoryRestaurant.Foods.Presentation/appsettings.json
