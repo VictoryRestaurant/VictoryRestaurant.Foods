@@ -10,9 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{26290A62-30A2-4BA8-954A-F1FA30B64A6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Persistence", "4 - Persistence", "{CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}"
-	ProjectSection(SolutionItems) = preProject
-		src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj = src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}"
 EndProject
@@ -27,6 +24,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Infrastructure", "src\VictoryRestaurant.Foods.Infrastructure\VictoryRestaurant.Foods.Infrastructure.csproj", "{0F247E33-4A92-453B-86B5-700B919C4B1D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Tests", "src\VictoryRestaurant.Foods.Tests\VictoryRestaurant.Foods.Tests.csproj", "{D55956C2-0CC6-465F-877D-8A22C6357A1D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VictoryRestaurant.Foods.Persistence", "src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj", "{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +53,10 @@ Global
 		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D55956C2-0CC6-465F-877D-8A22C6357A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +67,7 @@ Global
 		{177AEB9B-0310-46DF-B2B6-83D01F7E863F} = {26290A62-30A2-4BA8-954A-F1FA30B64A6C}
 		{0F247E33-4A92-453B-86B5-700B919C4B1D} = {2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}
 		{D55956C2-0CC6-465F-877D-8A22C6357A1D} = {5E1EE2E2-08FF-4C7B-86FA-77CBEF208060}
+		{2CFCC38F-E9B1-46F1-8588-A86F04ABA0F6} = {CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05B5D777-0625-4715-B206-869C5F4EC7D9}
