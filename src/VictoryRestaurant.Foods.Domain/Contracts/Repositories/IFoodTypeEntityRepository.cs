@@ -14,7 +14,7 @@ public interface IFoodTypeEntityRepository
         CancellationToken cancellationToken = default);
 
     public ValueTask<FoodTypeEntity?> GetAsync(
-        Func<FoodTypeEntity, bool> predicate,
+        Expression<Func<FoodTypeEntity, bool>> predicate,
         CancellationToken cancellationToken = default);
 
     public ValueTask<FoodTypeEntity> CreateAsync(FoodTypeEntity entity,

@@ -14,13 +14,13 @@ public interface IFoodEntityRepository
         CancellationToken cancellationToken = default);
 
     public ValueTask<FoodEntity?> GetAsync(
-        Func<FoodEntity, bool> predicate, 
+        Expression<Func<FoodEntity, bool>> predicate, 
         CancellationToken cancellationToken = default);
 
-    public ValueTask<FoodEntity> CreateAsync(FoodEntity entity,
+    public ValueTask<FoodEntity?> CreateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default);
 
-    public ValueTask<FoodEntity> UpdateAsync(FoodEntity entity,
+    public ValueTask<FoodEntity?> UpdateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default);
 
     public ValueTask DeleteAsync(Guid id,

@@ -2,11 +2,13 @@
 
 public sealed record class GetFoodTypeByConditionQuery : IRequest<FoodTypeEntity?>
 {
-    public Func<FoodTypeEntity, bool>? Predicate { get; }
+    public Expression<Func<FoodTypeEntity, bool>>? Predicate { get; }
 
     public GetFoodTypeByConditionQuery(
-        Func<FoodTypeEntity, bool> predicate) =>
+        Expression<Func<FoodTypeEntity, bool>> predicate)
+    {
         Predicate = predicate;
+    }  
 
     public GetFoodTypeByConditionQuery() { }
 
