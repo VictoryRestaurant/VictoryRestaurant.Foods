@@ -1,1 +1,14 @@
-﻿
+﻿global using Bogus;
+global using Bogus.DataSets;
+global using FluentAssertions;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Text.Json;
+global using VictoryRestaurant.Foods.Domain.Entities;
+global using VictoryRestaurant.Foods.Persistence.Context;
+global using VictoryRestaurant.Foods.Persistence.Repositories;
+global using VictoryRestaurant.Foods.Tests.Data.DataSets.Models;
+global using VictoryRestaurant.Foods.Tests.Data.Factories;
+global using VictoryRestaurant.Foods.Tests.Data.Generators;
+global using VictoryRestaurant.Foods.Tests.Extensions;
+global using Xunit;
