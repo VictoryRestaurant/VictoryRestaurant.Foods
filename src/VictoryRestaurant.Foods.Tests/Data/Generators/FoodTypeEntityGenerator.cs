@@ -2,7 +2,7 @@
 
 public static class FoodTypeEntityGenerator
 {
-    public static FoodTypeEntity GenerateFoodTypeEntity()
+    public static FoodTypeEntity Generate()
     {
         var faker = new Faker();
 

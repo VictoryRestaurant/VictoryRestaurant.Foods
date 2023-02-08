@@ -1,10 +1,10 @@
 ﻿namespace VictoryRestaurant.Foods.Persistence.Repositories;
 
-public sealed class FoodTypeRepository : IFoodTypeEntityRepository
+public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
 {
     private readonly ApplicationContext _context;
 
-    public FoodTypeRepository(ApplicationContext context)
+    public FoodTypeEntityRepository(ApplicationContext context)
     {
         _context = context;
     }

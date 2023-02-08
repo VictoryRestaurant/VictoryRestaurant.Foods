@@ -6,7 +6,7 @@ public static class FoodEntityGenerator
     {
         var faker = new Faker();
 
-        var foodType = FoodTypeEntityGenerator.GenerateFoodTypeEntity();
+        var foodType = FoodTypeEntityGenerator.Generate();
 
         FoodEntity food = new()
         {
