@@ -17,10 +17,10 @@ public interface IFoodTypeEntityRepository
         Expression<Func<FoodTypeEntity, bool>> predicate,
         CancellationToken cancellationToken = default);
 
-    public ValueTask<FoodTypeEntity> CreateAsync(FoodTypeEntity entity,
+    public ValueTask<FoodTypeEntity?> CreateAsync(FoodTypeEntity entity,
         CancellationToken cancellationToken = default);
 
-    public ValueTask UpdateAsync(FoodTypeEntity entity,
+    public ValueTask<FoodTypeEntity?> UpdateAsync(FoodTypeEntity entity,
         CancellationToken cancellationToken = default);
 
     public ValueTask DeleteAsync(Guid id,
