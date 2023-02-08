@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{26290A62-30A2-4BA8-954A-F1FA30B64A6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Persistence", "4 - Persistence", "{CBE0CC68-D0C6-4E8F-9E44-B083CA93328E}"
+	ProjectSection(SolutionItems) = preProject
+		src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj = src\VictoryRestaurant.Foods.Persistence\VictoryRestaurant.Foods.Persistence.csproj
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{2BB28C9C-5B0B-41BA-95BA-46697D8E0BCF}"
 EndProject
