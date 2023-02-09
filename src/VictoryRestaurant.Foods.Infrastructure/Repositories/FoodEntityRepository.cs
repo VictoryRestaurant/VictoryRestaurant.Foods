@@ -1,29 +1,29 @@
-﻿namespace VictoryRestaurant.Foods.Persistence.Repositories;
+﻿namespace VictoryRestaurant.Foods.Infrastructure.Repositories;
 
-public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
+public sealed class FoodEntityRepository : IFoodEntityRepository
 {
     private readonly ApplicationContext _context;
 
-    public FoodTypeEntityRepository(ApplicationContext context)
+    public FoodEntityRepository(ApplicationContext context)
     {
         _context = context;
     }
 
-    public async ValueTask<IEnumerable<FoodTypeEntity>> GetAllAsync(
+    public async ValueTask<IEnumerable<FoodEntity>> GetAllAsync(
         CancellationToken cancellationToken = default)
     {
-        var entities = await _context.FoodTypes.AsNoTracking()
+        var entities = await _context.Foods.AsNoTracking()
             .ToListAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
         return entities;
     }
 
-    public async ValueTask<IEnumerable<FoodTypeEntity>> GetAllAsync(
-        Func<FoodTypeEntity, bool> predicate,
+    public async ValueTask<IEnumerable<FoodEntity>> GetAllAsync(
+        Func<FoodEntity, bool> predicate,
         CancellationToken cancellationToken = default)
     {
-        var query = _context.FoodTypes.AsNoTracking();
+        var query = _context.Foods.AsNoTracking();
 
         if (predicate == default)
         {
@@ -38,7 +38,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entities;
     }
 
-    public async ValueTask<FoodTypeEntity?> GetAsync(Guid id,
+    public async ValueTask<FoodEntity?> GetAsync(Guid id,
         CancellationToken cancellationToken = default)
     {
         if (id == default)
@@ -46,15 +46,15 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return default;
         }
 
-        var entity = await _context.FoodTypes.AsNoTracking()
+        var entity = await _context.Foods.AsNoTracking()
             .SingleOrDefaultAsync(predicate: entity => entity.Id == id, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
         return entity;
     }
 
-    public async ValueTask<FoodTypeEntity?> GetAsync(
-        Expression<Func<FoodTypeEntity, bool>> predicate,
+    public async ValueTask<FoodEntity?> GetAsync(
+        Expression<Func<FoodEntity, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
         if (predicate == default)
@@ -62,7 +62,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return default;
         }
 
-        var entity = await _context.FoodTypes
+        var entity = await _context.Foods
             .AsNoTracking()
             .FirstOrDefaultAsync(predicate, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
@@ -70,7 +70,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entity;
     }
 
-    public async ValueTask<FoodTypeEntity?> CreateAsync(FoodTypeEntity entity,
+    public async ValueTask<FoodEntity?> CreateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default)
     {
         if (entity == default)
@@ -78,7 +78,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return default;
         }
 
-        await _context.FoodTypes.AddAsync(entity, cancellationToken)
+        await _context.Foods.AddAsync(entity, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
         await _context.SaveChangesAsync(cancellationToken)
@@ -87,7 +87,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entity;
     }
 
-    public async ValueTask<FoodTypeEntity?> UpdateAsync(FoodTypeEntity entity,
+    public async ValueTask<FoodEntity?> UpdateAsync(FoodEntity entity,
         CancellationToken cancellationToken = default)
     {
         if (entity == default || entity.Id == default)
@@ -95,7 +95,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return default;
         }
 
-        var entityFromStorage = await _context.FoodTypes.SingleOrDefaultAsync(
+        var entityFromStorage = await _context.Foods.SingleOrDefaultAsync(
             predicate: entity => entity.Id == entity.Id, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
@@ -104,7 +104,12 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return default;
         }
 
+        entityFromStorage.CreatedDate = entity.CreatedDate;
         entityFromStorage.Name = entity.Name;
+        entityFromStorage.Description = entity.Description;
+        entityFromStorage.Cost = entity.Cost;
+        entityFromStorage.ImagePath = entity.ImagePath;
+        entityFromStorage.FoodTypeId = entityFromStorage.FoodTypeId;
 
         await _context.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
@@ -120,7 +125,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return;
         }
 
-        var entity = await _context.FoodTypes.SingleOrDefaultAsync(
+        var entity = await _context.Foods.SingleOrDefaultAsync(
             predicate: entity => entity.Id == id, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
@@ -129,7 +134,7 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
             return;
         }
 
-        _context.FoodTypes.Remove(entity);
+        _context.Foods.Remove(entity);
 
         await _context.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);

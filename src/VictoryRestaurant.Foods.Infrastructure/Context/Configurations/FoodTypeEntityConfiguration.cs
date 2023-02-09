@@ -1,4 +1,4 @@
-﻿namespace VictoryRestaurant.Foods.Persistence.Context.Configurations;
+﻿namespace VictoryRestaurant.Foods.Infrastructure.Context.Configurations;
 
 internal static class FoodTypeEntityConfiguration
 {

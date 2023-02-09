@@ -1,4 +1,4 @@
-﻿namespace VictoryRestaurant.Foods.Persistence.Context;
+﻿namespace VictoryRestaurant.Foods.Infrastructure.Context;
 
 public sealed class ApplicationContext : DbContext
 {
