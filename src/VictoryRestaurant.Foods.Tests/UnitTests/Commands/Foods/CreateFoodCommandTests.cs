@@ -1,6 +1,6 @@
 ﻿namespace VictoryRestaurant.Foods.Tests.UnitTests.Commands.Foods;
 
-public class CreateFoodCommandTests
+public sealed class CreateFoodCommandTests
 {
     [Fact]
     public async ValueTask Handle()

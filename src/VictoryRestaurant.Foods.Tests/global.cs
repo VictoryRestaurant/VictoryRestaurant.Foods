@@ -5,6 +5,7 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Text.Json;
 global using VictoryRestaurant.Foods.Application.Commands.Foods;
+global using VictoryRestaurant.Foods.Application.Commands.FoodTypes;
 global using VictoryRestaurant.Foods.Domain.Entities;
 global using VictoryRestaurant.Foods.Infrastructure.Context;
 global using VictoryRestaurant.Foods.Infrastructure.Repositories;
