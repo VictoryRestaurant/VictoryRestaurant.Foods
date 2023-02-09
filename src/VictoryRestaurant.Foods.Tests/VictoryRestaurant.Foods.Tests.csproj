@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VictoryRestaurant.Foods.Domain\VictoryRestaurant.Foods.Domain.csproj" />
+    <ProjectReference Include="..\VictoryRestaurant.Foods.Infrastructure\VictoryRestaurant.Foods.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
