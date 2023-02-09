@@ -16,7 +16,7 @@ internal static class SwaggerConfiguration
 
             options.SwaggerDoc(name: "v1", info: new OpenApiInfo
             {
-                Title = Assembly.GetExecutingAssembly().GetName().Name,
+                Title = "VictoryRestaurant.Foods",
                 Version = $"v{Assembly.GetExecutingAssembly().GetName().Version}"
             });
 
