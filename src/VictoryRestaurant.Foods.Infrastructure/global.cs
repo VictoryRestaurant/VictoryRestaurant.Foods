@@ -1,1 +1,17 @@
-﻿
+﻿global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.ValueGeneration;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Linq.Expressions;
+global using System.Reflection;
+global using VictoryRestaurant.Foods.Application.Commands.Foods;
+global using VictoryRestaurant.Foods.Application.Commands.FoodTypes;
+global using VictoryRestaurant.Foods.Application.Queries.Foods;
+global using VictoryRestaurant.Foods.Application.Queries.FoodTypes;
+global using VictoryRestaurant.Foods.Domain.Contracts.Repositories;
+global using VictoryRestaurant.Foods.Domain.Entities;
+global using VictoryRestaurant.Foods.Infrastructure.Context;
+global using VictoryRestaurant.Foods.Infrastructure.Context.Configurations;
+global using VictoryRestaurant.Foods.Infrastructure.DependencyInjection.MediatR.Profiles;
+global using VictoryRestaurant.Foods.Infrastructure.Repositories;
