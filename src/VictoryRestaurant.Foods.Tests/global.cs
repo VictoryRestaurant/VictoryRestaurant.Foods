@@ -3,6 +3,7 @@ global using Bogus.DataSets;
 global using FluentAssertions;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.DependencyInjection;
+global using System.Linq.Expressions;
 global using System.Text.Json;
 global using VictoryRestaurant.Foods.Application.Commands.Foods;
 global using VictoryRestaurant.Foods.Application.Commands.FoodTypes;
