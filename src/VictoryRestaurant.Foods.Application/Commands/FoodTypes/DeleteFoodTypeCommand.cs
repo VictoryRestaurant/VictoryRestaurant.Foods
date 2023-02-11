@@ -10,9 +10,9 @@ public sealed record class DeleteFoodTypeCommand : IRequest
 
     public sealed record class Handler : IRequestHandler<DeleteFoodTypeCommand>
     {
-        private readonly IFoodEntityRepository _repository;
+        private readonly IFoodTypeEntityRepository _repository;
 
-        public Handler(IFoodEntityRepository repository)
+        public Handler(IFoodTypeEntityRepository repository)
         {
             _repository = repository;
         }
