@@ -1,32 +1,32 @@
 ﻿namespace VictoryRestaurant.Foods.Application.Commands.FoodTypes;
 
-public sealed record class UpdateFoodTypeCommand : IRequest<FoodEntity?>
+public sealed record class UpdateFoodTypeCommand : IRequest<FoodTypeEntity?>
 {
-    public FoodEntity? Food { get; }
+    public FoodTypeEntity? FoodType { get; }
 
-    public UpdateFoodTypeCommand(FoodEntity food) => Food = food;
+    public UpdateFoodTypeCommand(FoodTypeEntity foodType) => FoodType = foodType;
 
     public UpdateFoodTypeCommand() { }
 
-    public sealed record class Handler : IRequestHandler<UpdateFoodTypeCommand, FoodEntity?>
+    public sealed record class Handler : IRequestHandler<UpdateFoodTypeCommand, FoodTypeEntity?>
     {
-        private readonly IFoodEntityRepository _repository;
+        private readonly IFoodTypeEntityRepository _repository;
 
-        public Handler(IFoodEntityRepository repository)
+        public Handler(IFoodTypeEntityRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<FoodEntity?> Handle(
+        public async Task<FoodTypeEntity?> Handle(
             UpdateFoodTypeCommand request,
             CancellationToken cancellationToken)
         {
-            if (request.Food is null)
+            if (request.FoodType is null)
             {
                 return default;
             }
 
-            var newFood = await _repository.UpdateAsync(entity: request.Food, cancellationToken);
+            var newFood = await _repository.UpdateAsync(entity: request.FoodType, cancellationToken);
 
             return newFood;
         }

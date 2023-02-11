@@ -11,8 +11,8 @@ internal static class FoodTypeMediatRProfile
         services.AddScoped<IRequest<Unit>, DeleteFoodTypeCommand>();
         services.AddScoped<IRequestHandler<DeleteFoodTypeCommand, Unit>, DeleteFoodTypeCommand.Handler>();
 
-        services.AddScoped<IRequest<FoodEntity?>, UpdateFoodTypeCommand>();
-        services.AddScoped<IRequestHandler<UpdateFoodTypeCommand, FoodEntity?>, UpdateFoodTypeCommand.Handler>();
+        services.AddScoped<IRequest<FoodTypeEntity?>, UpdateFoodTypeCommand>();
+        services.AddScoped<IRequestHandler<UpdateFoodTypeCommand, FoodTypeEntity?>, UpdateFoodTypeCommand.Handler>();
 
         // Queries
         services.AddScoped<IRequest<IEnumerable<FoodTypeEntity>>, GetAllFoodTypeListQuery>();
