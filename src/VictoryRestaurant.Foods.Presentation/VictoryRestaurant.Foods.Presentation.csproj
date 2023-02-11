@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -9,7 +9,7 @@
 	<ServerGarbageCollection>true</ServerGarbageCollection>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<NoWarn>$(NoWarn);1591</NoWarn>
-	<Version>0.3.0.0</Version>
+	<Version>0.4.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
