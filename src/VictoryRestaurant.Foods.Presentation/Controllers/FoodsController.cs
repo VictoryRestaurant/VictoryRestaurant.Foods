@@ -13,7 +13,7 @@ public sealed class FoodsController : ControllerBase
     }
 
     [HttpGet]
-    [Tags("Foods", "Get")]
+    [Tags(tags: "Foods")]
     [Route(template: "")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
@@ -29,5 +29,66 @@ public sealed class FoodsController : ControllerBase
         }
 
         return Ok(value: foods);
+    }
+
+    [HttpGet]
+    [Tags(tags: "Foods")]
+    [Route(template: "{id}")]
+    [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+    [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
+    [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<FoodEntity>> GetFoodByIdAsync(Guid id)
+    {
+        var food = await _mediator.Send(request: new GetFoodByConditionQuery(predicate: food => food.Id == id))
+            .ConfigureAwait(continueOnCapturedContext: false);
+
+        if(food is null)
+        {
+            return NotFound();
+        }
+
+        return Ok(value: food);
+    }
+
+    [HttpPost]
+    [Tags(tags: "Foods")]
+    [Route(template: "")]
+    [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+    [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
+    [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<FoodEntity>> CreateFoodAsync(FoodEntity food)
+    {
+        var createdFood = await _mediator.Send(request: new CreateFoodCommand(food))
+            .ConfigureAwait(continueOnCapturedContext: false);
+
+        return Ok(value: createdFood);
+    }
+
+    [HttpPut]
+    [Tags(tags: "Foods")]
+    [Route(template: "")]
+    [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+    [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
+    [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<FoodEntity>> UpdateFoodAsync(FoodEntity food)
+    {
+        var updatedFood = await _mediator.Send(request: new UpdateFoodCommand(food))
+            .ConfigureAwait(continueOnCapturedContext: false);
+
+        return Ok(value: updatedFood);
+    }
+
+    [HttpDelete]
+    [Tags(tags: "Foods")]
+    [Route(template: "{id}")]
+    [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+    [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
+    [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> DeleteFoodAsync(Guid id)
+    {
+        await _mediator.Send(request: new DeleteFoodCommand(id))
+            .ConfigureAwait(continueOnCapturedContext: false);
+
+        return Ok();
     }
 }
