@@ -1,18 +1,18 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-bullseye-slim AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim AS build
 WORKDIR /src
-COPY ["VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj", "VictoryRestaurant.Foods.Presentation/"]
+COPY ["src/VictoryRestaurant.Foods.Presentation", "VictoryRestaurant.Foods.Presentation/"]
 RUN dotnet restore "VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj"
 COPY . .
+
 WORKDIR "/src/VictoryRestaurant.Foods.Presentation"
 RUN dotnet build "VictoryRestaurant.Foods.Presentation.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "VictoryRestaurant.Foods.Presentation.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "VictoryRestaurant.Foods.Presentation.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

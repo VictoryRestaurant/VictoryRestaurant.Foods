@@ -1,0 +1,50 @@
+version: '3.4'
+
+networks:
+  proxynet:
+    driver: bridge
+services:
+  victoryrestaurant.foods.presentation:
+    container_name: foodsservice
+    image: ${DOCKER_REGISTRY-}victoryrestaurantfoodspresentation
+    build:
+      context: .
+      dockerfile: src/VictoryRestaurant.Foods.Presentation/Dockerfile
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+        reservations:
+          cpus: '0.25'
+          memory: 200M
+  postgres:
+    container_name: postgres
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_DB: "foods"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
+    networks:
+      - proxynet
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+        reservations:
+          cpus: '0.25'
+          memory: 200M

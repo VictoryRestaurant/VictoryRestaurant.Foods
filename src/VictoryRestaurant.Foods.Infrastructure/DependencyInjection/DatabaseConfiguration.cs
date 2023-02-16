@@ -6,7 +6,7 @@ public static class DatabaseConfiguration
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddTransient<DbContext, ApplicationContext>();
+        services.AddScoped<DbContext, ApplicationContext>();
 
         services.AddDbContext<ApplicationContext>(optionsAction: options =>
             options.UseNpgsql(

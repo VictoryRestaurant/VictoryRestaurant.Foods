@@ -11,6 +11,8 @@ public sealed class ApplicationContext : DbContext
     public ApplicationContext(DbContextOptions options) : base(options)
     {
         AppContext.SetSwitch(switchName: "Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
+
+        Database.Migrate();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
