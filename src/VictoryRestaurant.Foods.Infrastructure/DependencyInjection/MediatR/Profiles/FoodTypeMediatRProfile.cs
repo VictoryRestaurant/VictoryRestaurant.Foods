@@ -16,7 +16,7 @@ internal static class FoodTypeMediatRProfile
 
         // Queries
         services.AddScoped<IRequest<IEnumerable<FoodTypeEntity>>, GetAllFoodTypeListQuery>();
-        services.AddScoped<IRequestHandler<GetAllFoodListQuery, IEnumerable<FoodEntity>>, GetAllFoodListQuery.Handler>();
+        services.AddScoped<IRequestHandler<GetAllFoodTypeListQuery, IEnumerable<FoodTypeEntity>>, GetAllFoodTypeListQuery.Handler>();
 
         services.AddScoped<IRequest<FoodTypeEntity?>, GetFoodTypeByConditionQuery>();
         services.AddScoped<IRequestHandler<GetFoodTypeByConditionQuery, FoodTypeEntity?>, GetFoodTypeByConditionQuery.Handler>();

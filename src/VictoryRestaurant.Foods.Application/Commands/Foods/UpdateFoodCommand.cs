@@ -26,7 +26,8 @@ public sealed record class UpdateFoodCommand : IRequest<FoodEntity?>
                 return default;
             }
 
-            var newFood = await _repository.UpdateAsync(entity: request.Food, cancellationToken);
+            var newFood = await _repository.UpdateAsync(entity: request.Food, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
 
             return newFood;
         }
