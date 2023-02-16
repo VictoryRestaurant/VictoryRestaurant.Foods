@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  victoryrestaurant.foods.presentation:
+    image: ${DOCKER_REGISTRY-}victoryrestaurantfoodspresentation
+    build:
+      context: .
+      dockerfile: src/VictoryRestaurant.Foods.Presentation/Dockerfile
