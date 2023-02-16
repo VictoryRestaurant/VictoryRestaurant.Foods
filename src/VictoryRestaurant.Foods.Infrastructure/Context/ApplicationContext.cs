@@ -8,13 +8,18 @@ public sealed class ApplicationContext : DbContext
     /// <summary> Food types collection. </summary>
     public DbSet<FoodTypeEntity> FoodTypes => Set<FoodTypeEntity>();
 
-    public ApplicationContext(DbContextOptions options) : base(options) { }
+    public ApplicationContext(DbContextOptions options) : base(options)
+    {
+        AppContext.SetSwitch(switchName: "Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.AddFoodEntityConfiguration();
+        modelBuilder.HasPostgresExtension(name: "uuid-ossp");
 
         modelBuilder.AddFoodTypeEntityConfiguration();
+
+        modelBuilder.AddFoodEntityConfiguration();
 
         base.OnModelCreating(modelBuilder);
     }
