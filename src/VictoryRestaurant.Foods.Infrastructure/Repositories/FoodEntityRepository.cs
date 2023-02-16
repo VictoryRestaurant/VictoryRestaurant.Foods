@@ -13,6 +13,7 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
         CancellationToken cancellationToken = default)
     {
         var entities = await _context.Foods.AsNoTracking()
+            .Include(navigationPropertyPath: entity => entity.FoodType)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
@@ -32,6 +33,7 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
         }
 
         var entities = await query.AsQueryable()
+            .Include(navigationPropertyPath: entity => entity.FoodType)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
@@ -62,12 +64,13 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
             return default;
         }
 
-        var entity = await _context.Foods
+        var entities = await _context.Foods
             .AsNoTracking()
+            .Include(navigationPropertyPath: entity => entity.FoodType)
             .FirstOrDefaultAsync(predicate, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
-        return entity;
+        return entities;
     }
 
     public async ValueTask<FoodEntity?> CreateAsync(FoodEntity entity,
@@ -95,8 +98,9 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
             return default;
         }
 
-        var entityFromStorage = await _context.Foods.SingleOrDefaultAsync(
-            predicate: entity => entity.Id == entity.Id, cancellationToken)
+        var entityFromStorage = await _context.Foods
+            .Include(navigationPropertyPath: entity => entity.FoodType)
+            .FirstOrDefaultAsync(predicate: entity => entity.Id == entity.Id, cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
         if (entityFromStorage == default)
@@ -110,6 +114,11 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
         entityFromStorage.Cost = entity.Cost;
         entityFromStorage.ImagePath = entity.ImagePath;
         entityFromStorage.FoodTypeId = entityFromStorage.FoodTypeId;
+
+        if(entityFromStorage.FoodType is not null && entity.FoodType is not null)
+        {
+            entityFromStorage.FoodType.Name = entity.Name;
+        }
 
         await _context.SaveChangesAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
