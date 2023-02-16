@@ -26,7 +26,8 @@ public sealed record class CreateFoodTypeCommand : IRequest<FoodTypeEntity?>
                 return default;
             }
 
-            var newFoodType = await _repository.CreateAsync(entity: request.FoodType, cancellationToken);
+            var newFoodType = await _repository.CreateAsync(entity: request.FoodType, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
 
             return newFoodType;
         }
