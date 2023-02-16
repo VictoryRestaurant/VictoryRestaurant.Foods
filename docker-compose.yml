@@ -1,8 +1,24 @@
 version: '3.4'
 
+networks:
+  proxynet:
+    driver: bridge
 services:
   victoryrestaurant.foods.presentation:
+    container_name: foodsservice
     image: ${DOCKER_REGISTRY-}victoryrestaurantfoodspresentation
     build:
       context: .
       dockerfile: src/VictoryRestaurant.Foods.Presentation/Dockerfile
+  postgres:
+    container_name: postgres
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_DB: "foods"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
+    networks:
+      - proxynet

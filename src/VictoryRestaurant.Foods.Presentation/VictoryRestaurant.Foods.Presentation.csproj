@@ -9,7 +9,7 @@
 	<ServerGarbageCollection>true</ServerGarbageCollection>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<NoWarn>$(NoWarn);1591</NoWarn>
-	<Version>0.4.0.0</Version>
+	<Version>0.5.0.0</Version>
 	<DockerfileContext>..\..</DockerfileContext>
 	<DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
