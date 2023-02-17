@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -20,7 +20,7 @@ jobs:
       run: | 
         dotnet restore ./VictoryRestaurant.Foods.sln 
         dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
-    - name: Test
+    - name: Testing
       run: dotnet test ./VictoryRestaurant.Foods.sln --configuration Release --no-restore
 
 #on:
