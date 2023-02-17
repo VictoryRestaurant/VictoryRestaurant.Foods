@@ -7,15 +7,15 @@ on:
    types: [opened, synchronize, reopened]
 
 jobs:
-  manual:
-    name: manual
-    #needs: TerraformShow
-    #environment:
-    #  name: approvers
-    runs-on: ubuntu-latest
-    steps:
-    - name: manual approve
-    run: echo "Manually approved"
+  #manual:
+  #  name: manual
+  #  #needs: TerraformShow
+  #  #environment:
+  #  #  name: approvers
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #  - name: manual approve
+  #  run: echo "Manually approved"
   test:
     name: test
     runs-on: ubuntu-latest
