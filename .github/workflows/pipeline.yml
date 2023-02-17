@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
     - name: Test
-      run: dotnet test ./VictoryRestaurant.Foods.sln --no-build --verbosity normal
+      run: dotnet test ./VictoryRestaurant.Foods.sln --configuration Release --no-restore
 
 #on:
 #  push:
