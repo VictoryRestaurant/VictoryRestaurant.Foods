@@ -1,16 +1,65 @@
-name: Continious-Integration
-
+name: .NET Core
 on:
   push:
-    branches: [ "main" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "main" ]
-
+    branches: [ master ]
 jobs:
-  my_first_job:
-    name: My first job
-  my_second_job:
-    name: My second job
+  build_web_app1:
+    name: Build WebApp1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+ 
+    - name: Install dependencies
+      run: dotnet restore ${{ github.workspace }}/src/WebApp1/WebApp1.csproj
+      
+    - name: Build
+      run: dotnet build ${{ github.workspace }}/src/WebApp1/WebApp1.csproj --configuration Release --no-restore
+      
+    - name: Test
+      run: dotnet test ${{ github.workspace }}/src/WebApp1/WebApp1.csproj --no-restore --verbosity normal
+    - name: Publish
+      run: dotnet publish ${{ github.workspace }}/src/WebApp1/WebApp1.csproj
+    
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: WebApp1
+        path: ${{ github.workspace }}/src/WebApp1/bin/Debug/netcoreapp3.1/publish/
+        
+  build_web_app2:
+    name: Build WebApp2
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+ 
+    - name: Install dependencies
+      run: dotnet restore ${{ github.workspace }}/src/WebApp2/WebApp2.csproj
+      
+    - name: Build
+      run: dotnet build ${{ github.workspace }}/src/WebApp2/WebApp2.csproj --configuration Release --no-restore
+      
+    - name: Test
+      run: dotnet test ${{ github.workspace }}/src/WebApp2/WebApp2.csproj --no-restore --verbosity normal
+    - name: Publish
+      run: dotnet publish ${{ github.workspace }}/src/WebApp2/WebApp2.csproj
+       
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: WebApp2
+        path: ${{ github.workspace }}/src/WebApp2/bin/Debug/netcoreapp3.1/publish/
 
 #on:
 #  push:
