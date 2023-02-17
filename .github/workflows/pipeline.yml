@@ -9,8 +9,8 @@ on:
 jobs:
   test:
     name: test
-    runs-on: ubuntu-latest
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
