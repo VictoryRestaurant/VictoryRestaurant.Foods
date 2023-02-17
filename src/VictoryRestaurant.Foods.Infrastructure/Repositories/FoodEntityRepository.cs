@@ -17,7 +17,7 @@ public sealed class FoodEntityRepository : IFoodEntityRepository
             .ToListAsync(cancellationToken)
             .ConfigureAwait(continueOnCapturedContext: false);
 
-        return entitis; 
+        return entities;
     }
 
     public async ValueTask<IEnumerable<FoodEntity>> GetAllAsync(
