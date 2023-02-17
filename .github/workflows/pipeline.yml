@@ -9,6 +9,9 @@ on:
 jobs:
   manualjob:
     name: manualjob
+    needs: TerraformShow
+    environment:
+      name: approvers
     runs-on: ubuntu-latest
     steps:
     - name: manualapproove
