@@ -1,13 +1,10 @@
 on:
-  workflow_dispatch:
-    test:
-      description: 'True to print to STDOUT'
-      required: true
-      type: boolean
-  #push:
-  #  branches: [ "main" ]
-  #pull_request:
-  #  branches: [ "main" ]
+ workflow_dispatch:
+ push:
+   branches:
+     - main
+ pull_request:
+   types: [opened, synchronize, reopened]
 
 jobs:
   test:
