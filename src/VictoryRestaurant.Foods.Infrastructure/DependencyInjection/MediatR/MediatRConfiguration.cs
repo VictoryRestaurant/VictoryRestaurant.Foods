@@ -2,7 +2,7 @@
 
 public static class MediatRConfiguration
 {
-    /// <summary> Add MediatR & Commands & Queries to IoC. </summary>
+    /// <summary> Add MediatR, all commands and queries to IoC. </summary>
     /// <param name="services"> IoC. </param>
     public static void AddMediatRConfiguration(this IServiceCollection services)
     {

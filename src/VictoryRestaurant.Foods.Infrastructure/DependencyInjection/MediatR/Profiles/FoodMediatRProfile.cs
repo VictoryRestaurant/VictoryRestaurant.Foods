@@ -2,6 +2,8 @@
 
 internal static class FoodMediatRProfile
 {
+    /// <summary> Add <see cref="FoodEntity"/> commands and queries to IoC. </summary>
+    /// <param name="services"> IoC. </param>
     public static void AddFoodMediatRProfile(this IServiceCollection services)
     {
         // Commands
