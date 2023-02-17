@@ -5,15 +5,6 @@ on:
      - main
 
 jobs:
-  manualrunner:
-    name: manual runner
-    needs: TerraformShow
-    environment:
-      name: approvers
-    runs-on: ubuntu-latest
-    steps:
-    - name: manual approve
-    run: echo "Manually approved"
   test:
     name: test
     runs-on: ubuntu-latest
