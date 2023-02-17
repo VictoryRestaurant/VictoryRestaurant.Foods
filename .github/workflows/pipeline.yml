@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./VictoryRestaurant.Foods.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
