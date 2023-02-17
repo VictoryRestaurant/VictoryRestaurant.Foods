@@ -1,5 +1,3 @@
-name: Continious-Integration
-
 on:
   push:
     branches: [ "main" ]
@@ -7,22 +5,18 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
+    - name: Test
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    - name: Restore dependencies
       run: dotnet restore ./VictoryRestaurant.Foods.sln
-    - name: Build
       run: dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
-    - name: Test
-      run: dotnet test ./VictoryRestaurant.Foods.sln --configuration Release
+      run: dotnet test ./VictoryRestaurant.Foods.sln --configuration Release --no-restore
 
 #on:
 #  push:
