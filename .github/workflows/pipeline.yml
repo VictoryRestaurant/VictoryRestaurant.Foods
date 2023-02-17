@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./VictoryRestaurant.Foods.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
