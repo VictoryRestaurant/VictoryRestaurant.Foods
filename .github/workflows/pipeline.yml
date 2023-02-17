@@ -16,8 +16,8 @@ jobs:
     - uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    #- name: Build
-    run: | 
+    - name: Build
+      run: | 
         dotnet restore ./VictoryRestaurant.Foods.sln 
         dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
     - name: Test
