@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: manualapproove
-    run: |
-      echo "Manually approved"
+    run: Manually approved
   test:
     name: test
     needs: manualjob
