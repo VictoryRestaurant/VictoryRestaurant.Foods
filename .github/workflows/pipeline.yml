@@ -8,6 +8,7 @@ on:
 
 jobs:
   manualjob:
+    name: manualjob
     runs-on: ubuntu-latest
     steps:
     - name: manualapproove
@@ -15,6 +16,7 @@ jobs:
       echo "Manually approved"
   test:
     name: test
+    needs: manualjob
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     steps:
