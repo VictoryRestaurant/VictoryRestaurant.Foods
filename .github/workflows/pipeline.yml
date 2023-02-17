@@ -4,10 +4,10 @@ on:
       description: 'True to print to STDOUT'
       required: true
       type: boolean
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #push:
+  #  branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
 
 jobs:
   test:
