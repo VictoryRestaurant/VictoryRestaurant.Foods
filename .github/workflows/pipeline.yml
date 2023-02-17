@@ -1,5 +1,5 @@
 on:
- workflow_dispatch:
+ #workflow_dispatch:
  push:
    branches:
      - main
@@ -8,6 +8,7 @@ on:
 
 jobs:
   manual:
+    name: manual
     #needs: TerraformShow
     #environment:
     #  name: approvers
@@ -17,7 +18,6 @@ jobs:
     run: echo "Manually approved"
   test:
     name: test
-    if: ${{ !contains(github.event.pull_request.labels.*.name, '0 diff trivial') }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
