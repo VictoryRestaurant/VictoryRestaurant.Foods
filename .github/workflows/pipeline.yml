@@ -1,4 +1,4 @@
-name: CI
+name: Continious-Integration
 
 on:
   push:
@@ -7,17 +7,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: Test
-      #uses: actions/setup-dotnet@v3
-      #with:
-      #  dotnet-version: 7.0.x
+    - name: Install .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Build
       run: dotnet restore ./VictoryRestaurant.Foods.sln
       run: dotnet build src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj --configuration Release --no-restore
+    - name: Test
       run: dotnet test ./VictoryRestaurant.Foods.sln --configuration Release --no-restore
 
 #on:
