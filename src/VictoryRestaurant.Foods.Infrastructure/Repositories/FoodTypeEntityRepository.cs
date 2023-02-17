@@ -1,5 +1,6 @@
 ﻿namespace VictoryRestaurant.Foods.Infrastructure.Repositories;
 
+/// <summary> <see cref="FoodTypeEntity"/> repository. </summary>
 public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
 {
     private readonly ApplicationContext _context;
@@ -9,6 +10,9 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         _context = context;
     }
 
+    /// <summary> Asynchronous receipt of all <see cref="FoodTypeEntity"/>'s. </summary>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> <see cref="FoodTypeEntity"/>'s collection. </returns>
     public async ValueTask<IEnumerable<FoodTypeEntity>> GetAllAsync(
         CancellationToken cancellationToken = default)
     {
@@ -19,6 +23,13 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entities;
     }
 
+    /// <summary>
+    /// Asynchronous receipt of all <see cref="FoodTypeEntity"/>'s
+    /// by <paramref name="predicate"/> filter.
+    /// </summary>
+    /// <param name="predicate"> Filter. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> <see cref="FoodTypeEntity"/>'s collection. </returns>
     public async ValueTask<IEnumerable<FoodTypeEntity>> GetAllAsync(
         Func<FoodTypeEntity, bool> predicate,
         CancellationToken cancellationToken = default)
@@ -38,7 +49,14 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entities;
     }
 
-    public async ValueTask<FoodTypeEntity?> GetAsync(Guid id,
+    /// <summary>
+    /// Asynchronous first receipt <see cref="FoodTypeEntity"/> by <paramref name="id"/>
+    /// or <see langword="default"/>(<see cref="FoodTypeEntity"/>).
+    /// </summary>
+    /// <param name="id"> Identifier. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> First finded <see cref="FoodTypeEntity"/> or <see langword="default"/>(<see cref="FoodTypeEntity"/>). </returns>
+    public async ValueTask<FoodTypeEntity?> FirstOrDefaultAsync(Guid id,
         CancellationToken cancellationToken = default)
     {
         if (id == default)
@@ -53,7 +71,14 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entity;
     }
 
-    public async ValueTask<FoodTypeEntity?> GetAsync(
+    /// <summary>
+    /// Asynchronous first receipt <see cref="FoodTypeEntity"/> by <paramref name="predicate"/> filter
+    /// or <see langword="default"/>(<see cref="FoodTypeEntity"/>).
+    /// </summary>
+    /// <param name="predicate"> Filter. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> First finded <see cref="FoodTypeEntity"/> or <see langword="default"/>(<see cref="FoodTypeEntity"/>). </returns>
+    public async ValueTask<FoodTypeEntity?> FirstOrDefaultAsync(
         Expression<Func<FoodTypeEntity, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
@@ -70,6 +95,10 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entity;
     }
 
+    /// <summary> Asynchronous create new <see cref="FoodTypeEntity"/>. </summary>
+    /// <param name="entity"> Creatable <see cref="FoodTypeEntity"/>. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> Created new <see cref="FoodTypeEntity"/>. </returns>
     public async ValueTask<FoodTypeEntity?> CreateAsync(FoodTypeEntity entity,
         CancellationToken cancellationToken = default)
     {
@@ -87,6 +116,10 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entity;
     }
 
+    /// <summary> Asynchronous update <see cref="FoodTypeEntity"/>. </summary>
+    /// <param name="entity"> Updatable <see cref="FoodTypeEntity"/>. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
+    /// <returns> Updated <see cref="FoodTypeEntity"/>. </returns>
     public async ValueTask<FoodTypeEntity?> UpdateAsync(FoodTypeEntity entity,
         CancellationToken cancellationToken = default)
     {
@@ -112,6 +145,9 @@ public sealed class FoodTypeEntityRepository : IFoodTypeEntityRepository
         return entityFromStorage;
     }
 
+    /// <summary> Asynchronous delete <see cref="FoodTypeEntity"/> by <paramref name="id"/>. </summary>
+    /// <param name="id"> Identifier. </param>
+    /// <param name="cancellationToken"> Asynchronous operation cancellation token. </param>
     public async ValueTask DeleteAsync(Guid id,
         CancellationToken cancellationToken = default)
     {

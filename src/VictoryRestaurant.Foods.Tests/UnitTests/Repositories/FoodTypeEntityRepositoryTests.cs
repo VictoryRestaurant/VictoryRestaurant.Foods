@@ -56,7 +56,7 @@ public class FoodTypeEntityRepositoryTests
         await repository.CreateAsync(entity: generatedFoodType);
 
         // Act
-        var foodTypeFromStorage = await repository.GetAsync(id: generatedFoodType.Id);
+        var foodTypeFromStorage = await repository.FirstOrDefaultAsync(id: generatedFoodType.Id);
 
         // Assert
         foodTypeFromStorage.Should().NotBeNull().And.BeEquivalentTo(expectation: generatedFoodType);
@@ -75,7 +75,7 @@ public class FoodTypeEntityRepositoryTests
         await repository.CreateAsync(entity: generatedFoodType);
 
         // Act
-        var foodTypeFromStorage = await repository.GetAsync(
+        var foodTypeFromStorage = await repository.FirstOrDefaultAsync(
             predicate: foodType =>
                 foodType.Id == generatedFoodType.Id &&
                 foodType.Name == generatedFoodType.Name);
@@ -124,7 +124,7 @@ public class FoodTypeEntityRepositoryTests
         await repository.UpdateAsync(entity: createdFoodType);
 
         // Assert
-        var foodTypeFromStorage = await repository.GetAsync(
+        var foodTypeFromStorage = await repository.FirstOrDefaultAsync(
             predicate: food => food.Name == "Updated!");
 
         foodTypeFromStorage.Should().NotBeNull().And.BeEquivalentTo(expectation: createdFoodType);

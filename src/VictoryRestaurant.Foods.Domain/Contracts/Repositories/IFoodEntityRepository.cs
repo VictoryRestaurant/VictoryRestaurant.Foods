@@ -9,7 +9,7 @@ public interface IFoodEntityRepository
     public ValueTask<IEnumerable<FoodEntity>> GetAllAsync(
         CancellationToken cancellationToken = default);
 
-    /// <summary> 
+    /// <summary>
     /// Asynchronous receipt of all <see cref="FoodEntity"/>'s
     /// by <paramref name="predicate"/> filter.
     /// </summary>
