@@ -1,5 +1,6 @@
 ﻿namespace VictoryRestaurant.Foods.Infrastructure.Context;
 
+/// <summary> Database context. </summary>
 public sealed class ApplicationContext : DbContext
 {
     /// <summary> Foods collection. </summary>

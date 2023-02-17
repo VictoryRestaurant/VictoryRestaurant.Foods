@@ -2,6 +2,8 @@
 
 internal static class SwaggerConfiguration
 {
+    /// <summary> Enable Open Api specification configuration. </summary>
+    /// <param name="services"> IoC. </param>
     public static void AddSwaggerConfiguration(
         this IServiceCollection services)
     {
@@ -32,6 +34,8 @@ internal static class SwaggerConfiguration
         });
     }
 
+    /// <summary> Use swagger middleware. </summary>
+    /// <param name="app"> Application builder. </param>
     public static void UseSwaggerSetup(this IApplicationBuilder app)
     {
         app.UseSwagger();

@@ -2,6 +2,9 @@
 
 public static class DatabaseConfiguration
 {
+    /// <summary> Add database configuration. </summary>
+    /// <param name="services"> IoC. </param>
+    /// <param name="configuration"> Configuration. </param>
     public static void AddDatabase(
         this IServiceCollection services,
         IConfiguration configuration)

@@ -2,6 +2,9 @@
 
 internal static class LoggingConfiguration
 {
+    /// <summary> Enable logging configuration. </summary>
+    /// <param name="services"> IoC. </param>
+    /// <param name="hostBuilder"> Builder. </param>
     public static void AddLoggingConfiguration(
         this IServiceCollection services,
         ConfigureHostBuilder hostBuilder)
