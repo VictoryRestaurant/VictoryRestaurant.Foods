@@ -2,11 +2,12 @@
 
 public static class DependencyInjectionConfiguration
 {
+    /// <summary> Add all repositories to IoC. </summary>
+    /// <param name="services"> IoC. </param>
     public static void AddRepositories(this IServiceCollection services)
     {
-        ArgumentNullException.ThrowIfNull(argument: nameof(services));
-
         services.AddScoped<IFoodEntityRepository, FoodEntityRepository>();
+
         services.AddScoped<IFoodTypeEntityRepository, FoodTypeEntityRepository>();
     }
 }
