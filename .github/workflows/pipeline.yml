@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     name: test
-    if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
+    if: ${{ !contains(github.event.pull_request.labels.*.name, '0 diff trivial') }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
