@@ -5,11 +5,13 @@ on:
         description: 'Log level'
         required: true
         default: 'warning'
-  push:
-    branches:
-    - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+    tags:
+      description: 'test'
+  #push:
+  #  branches:
+  #  - main
+  #pull_request:
+  #  types: [opened, synchronize, reopened]
 
 jobs:
 
