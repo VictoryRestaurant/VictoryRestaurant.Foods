@@ -1,5 +1,6 @@
 ﻿namespace VictoryRestaurant.Foods.Presentation.Controllers;
 
+/// <summary> Controller for get foods. </summary>
 [Route(template: "api/foods")]
 [Produces(contentType: "application/json")]
 [ApiController]
@@ -12,9 +13,19 @@ public sealed class FoodsController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet]
+    /// <summary> Receipt of all food. </summary>
+    /// <remarks>
+    /// Request example:
+    ///
+    ///     GET api/foods
+    ///
+    /// </remarks>
+    /// <returns> Foods collection. </returns>
+    /// <response code="200"> Foods collection. </response>
+    /// <response code="404"> Not found. </response>
+    /// <response code="500"> Internal server error. </response>
+    [HttpGet(template: "")]
     [Tags(tags: "Foods")]
-    [Route(template: "")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
@@ -31,9 +42,19 @@ public sealed class FoodsController : ControllerBase
         return Ok(value: foods);
     }
 
-    [HttpGet]
+    /// <summary> Get food by <paramref name="id"/>. </summary>
+    /// <remarks>
+    /// Request example:
+    ///
+    ///     GET api/foods/{id}
+    ///
+    /// </remarks>
+    /// <returns> Food. </returns>
+    /// <response code="200"> Food. </response>
+    /// <response code="404"> Not found. </response>
+    /// <response code="500"> Internal server error. </response>
+    [HttpGet(template: "{id}")]
     [Tags(tags: "Foods")]
-    [Route(template: "{id}")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status404NotFound)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
@@ -50,9 +71,26 @@ public sealed class FoodsController : ControllerBase
         return Ok(value: food);
     }
 
-    [HttpPost]
+    /// <summary> Create new food. </summary>
+    /// <remarks>
+    /// Request example:
+    ///
+    ///     POST api/foods
+    ///     {
+    ///         "createdDate": DateTime,
+    ///         "name": String,
+    ///         "description": String,
+    ///         "cost": Number,
+    ///         "imagePath": String,
+    ///         "foodTypeId": GUID
+    ///     }
+    ///
+    /// </remarks>
+    /// <returns> Created food. </returns>
+    /// <response code="200"> Created food. </response>
+    /// <response code="500"> Internal server error. </response>
+    [HttpPost(template: "")]
     [Tags(tags: "Foods")]
-    [Route(template: "")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
@@ -64,9 +102,27 @@ public sealed class FoodsController : ControllerBase
         return Ok(value: createdFood);
     }
 
-    [HttpPut]
+    /// <summary> Update food. </summary>
+    /// <remarks>
+    /// Request example:
+    ///
+    ///     PUT api/foods
+    ///     {
+    ///         "id": GUID,
+    ///         "createdDate": DateTime,
+    ///         "name": String,
+    ///         "description": String,
+    ///         "cost": Number,
+    ///         "imagePath": String,
+    ///         "foodTypeId": GUID
+    ///     }
+    ///
+    /// </remarks>
+    /// <returns> Updated food. </returns>
+    /// <response code="200"> Updated food. </response>
+    /// <response code="500"> Internal server error. </response>
+    [HttpPut(template: "")]
     [Tags(tags: "Foods")]
-    [Route(template: "")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
@@ -78,11 +134,18 @@ public sealed class FoodsController : ControllerBase
         return Ok(value: updatedFood);
     }
 
-    [HttpDelete]
+    /// <summary> Delete food by <paramref name="id"/>. </summary>
+    /// <remarks>
+    /// Request example:
+    ///
+    ///     DELETE api/foods/{id}
+    ///
+    /// </remarks>
+    /// <response code="200"> Food has been deleted. </response>
+    /// <response code="500"> Internal server error. </response>
+    [HttpDelete(template: "{id}")]
     [Tags(tags: "Foods")]
-    [Route(template: "{id}")]
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
-    [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> DeleteFoodAsync(Guid id)
     {
