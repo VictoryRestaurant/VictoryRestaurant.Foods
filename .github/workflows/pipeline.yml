@@ -1,15 +1,15 @@
 on:
   workflow_dispatch:
-  inputs:
-    loglevel:
-      description: 'Log level'
-      required: true
-      default: 'warning'
- push:
-   branches:
-     - main
- pull_request:
-   types: [opened, synchronize, reopened]
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+  push:
+    branches:
+    - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
 
