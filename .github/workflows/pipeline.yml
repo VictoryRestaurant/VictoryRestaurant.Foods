@@ -3,10 +3,13 @@ on:
  push:
    branches:
      - main
+ pull_request:
+   types: [opened, synchronize, reopened]
 
 jobs:
   test:
     name: test
+    if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
