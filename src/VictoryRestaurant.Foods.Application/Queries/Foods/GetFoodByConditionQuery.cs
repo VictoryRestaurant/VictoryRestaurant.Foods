@@ -30,7 +30,7 @@ public sealed record class GetFoodByConditionQuery : IRequest<FoodEntity?>
                 return default;
             }
 
-            var food = await _repository.GetAsync(predicate: request.Predicate, cancellationToken);
+            var food = await _repository.FirstOrDefaultAsync(predicate: request.Predicate, cancellationToken);
 
             return food;
         }
