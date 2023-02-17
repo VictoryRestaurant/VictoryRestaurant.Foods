@@ -1,3 +1,5 @@
+name: Continious-Integration
+
 on:
   push:
     branches: [ "main" ]
