@@ -38,3 +38,14 @@ jobs:
         VALIDATE_ALL_CODEBASE: false
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: publishing
+      run: dotnet publish src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj -c Release -o release --nologo
