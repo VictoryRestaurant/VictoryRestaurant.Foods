@@ -50,8 +50,7 @@ jobs:
     - name: publishing
       run: dotnet publish src/VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj -c Release -o release --nologo
     - name: deploy
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: release/wwwroot
+          folder: build
+          clean: true
