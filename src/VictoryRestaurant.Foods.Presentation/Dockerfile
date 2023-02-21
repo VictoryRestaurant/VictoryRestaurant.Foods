@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0-bullseye-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-preview AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0-bullseye-slim AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-preview AS build
 WORKDIR /src
 COPY ["src/VictoryRestaurant.Foods.Presentation", "VictoryRestaurant.Foods.Presentation/"]
 RUN dotnet restore "VictoryRestaurant.Foods.Presentation/VictoryRestaurant.Foods.Presentation.csproj"
