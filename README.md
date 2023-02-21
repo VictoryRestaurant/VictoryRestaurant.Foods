@@ -37,7 +37,7 @@ classDiagram
 
 ## Technologies implemented:
 
-- .NET 7
+- .NET 8
 - ASP.NET Web API
 - Docker Compose
 - Swagger UI
