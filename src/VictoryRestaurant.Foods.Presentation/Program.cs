@@ -10,7 +10,11 @@ app.Run();
 
 void RegisterServices(IServiceCollection services)
 {
+    services.AddMapping();
+
     services.AddLoggingConfiguration(hostBuilder: builder.Host);
+
+    services.AddValidation();
 
     services.AddMediatRConfiguration();
 

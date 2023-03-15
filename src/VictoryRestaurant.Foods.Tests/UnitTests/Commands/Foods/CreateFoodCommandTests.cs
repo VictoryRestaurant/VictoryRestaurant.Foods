@@ -17,7 +17,7 @@ public sealed class CreateFoodCommandTests
         var command = new CreateFoodCommand(food: generatedFood);
 
         // Act
-        await handler.Handle(request: command, cancellationToken: default);
+        await handler.Handle(command: command, cancellationToken: default);
 
         // Assert
         var foodFromStorage = await context.Foods.SingleOrDefaultAsync(
