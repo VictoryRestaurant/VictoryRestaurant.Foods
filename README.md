@@ -45,6 +45,7 @@ classDiagram
 - PostgreSQL
 - Microsoft DependencyInjection
 - Serilog
+- FluentValidation
 - MediatR
 - xUnit
 - Bogus
