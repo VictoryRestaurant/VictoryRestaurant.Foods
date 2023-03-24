@@ -2,9 +2,9 @@
 
 public sealed record class CreateFoodCommand : IRequest<FoodEntity?>
 {
-    public FoodEntity? Food { get; }
+    public CreateFoodRequest? Request { get; }
 
-    public CreateFoodCommand(FoodEntity food) => Food = food;
+    public CreateFoodCommand(CreateFoodRequest request) => Request = request;
 
     public CreateFoodCommand() { }
 
@@ -18,15 +18,19 @@ public sealed record class CreateFoodCommand : IRequest<FoodEntity?>
         }
 
         public async Task<FoodEntity?> Handle(
-            CreateFoodCommand request,
+            CreateFoodCommand command,
             CancellationToken cancellationToken)
         {
-            if (request.Food is null)
+            if (command.Request is null)
             {
                 return default;
             }
 
-            var newFood = await _repository.CreateAsync(entity: request.Food, cancellationToken)
+            var food = command.Request.Adapt<FoodEntity>();
+
+            food.CreatedDate = DateTime.UtcNow;
+
+            var newFood = await _repository.CreateAsync(entity: food, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
 
             return newFood;

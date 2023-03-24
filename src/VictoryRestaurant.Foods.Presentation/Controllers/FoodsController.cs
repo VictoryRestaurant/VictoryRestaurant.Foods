@@ -77,7 +77,6 @@ public sealed class FoodsController : ControllerBase
     ///
     ///     POST api/foods
     ///     {
-    ///         "createdDate": DateTime,
     ///         "name": String,
     ///         "description": String,
     ///         "cost": Number,
@@ -94,9 +93,9 @@ public sealed class FoodsController : ControllerBase
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
     [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<FoodEntity>> CreateFoodAsync(FoodEntity food)
+    public async Task<ActionResult<FoodEntity>> CreateFoodAsync(CreateFoodRequest request)
     {
-        var createdFood = await _mediator.Send(request: new CreateFoodCommand(food))
+        var createdFood = await _mediator.Send(request: new CreateFoodCommand(request))
             .ConfigureAwait(continueOnCapturedContext: false);
 
         return Ok(value: createdFood);
